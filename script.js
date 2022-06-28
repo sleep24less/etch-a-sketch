@@ -4,9 +4,11 @@ const DEFAULT_MODE = 'color';
 let currentColor = DEFAULT_COLOR;
 let currentMode = DEFAULT_MODE;
 
+// Grid and title
 const cont = document.createElement('div');
-const title = document.createElement('h1');
+const buttonCont = document.querySelector('.buttons');
 
+// Buttons
 const colorPicker = document.querySelector('#color_picker');
 const colorBtn = document.querySelector('#color');
 const rainbowBtn = document.querySelector('#rainbow');
@@ -21,11 +23,10 @@ eraseBtn.onclick = () => setCurrentMode('erase');
 resetBtn.onclick = () => resetGrid();
 
 
-// Set up main structure of HTML
+// Insert grid
 cont.className = 'container';
-document.body.prepend(cont);
-cont.before(title);
-title.textContent = 'ETCH A SKETCH';
+document.body.insertBefore(cont, buttonCont);
+
 
 // Random number generator
 function randomNumber(max) {
