@@ -8,7 +8,7 @@ body {
     font-family: 'Nunito', 'Open Sans Light', sans-serif;
     line-height: 1.5;
     color: aquamarine;
-    background-color: rgb(224, 101, 101);
+    background-color: #e06565;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,9 +16,43 @@ body {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 60px;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.24);
+}
+
+.buttons {
+    display: flex;
+    height: 120px;
+    width: 1000px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#color_picker {
+    -webkit-appearance: none;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover,
+#color_picker:hover {
+    transition: 100ms;
+    transform: scale(1.05);
+}
+
+#color_picker::-webkit-color-swatch-wrapper {
+    padding: 2px;
+}
+
+#color_picker::-webkit-color-swatch {
+    border: none;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 16px;
 }
 
 .grid_item {
@@ -28,24 +62,23 @@ h1 {
     width: 100%;
 }
 
-.grid_item:hover {
-    transition: 0ms;
-    background-color: rgb(224, 101, 101);
+.grid_item.active {
+    transition: 500ms;
 }
 
 button {
     transition: 100ms;
     font-family: 'Nunito', 'Open Sans Light', sans-serif;
     color: aquamarine;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     background-color: rgb(126, 58, 58);
     border: none;
     border-radius: 10px;
-    box-shadow: 2px 2px 0px 1px aquamarine;
-    width: 200px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 16px;
+    width: 140px;
     height: 60px;
-    margin-top: 50px;
+    margin-bottom: 10px;
     cursor: pointer;
 }
 
@@ -54,5 +87,13 @@ button:active {
     transform: scale(0.95);
     box-shadow: none;
     color: rgb(103, 199, 165);
-    box-shadow: 1px 1px 0px 1px rgb(67, 134, 111);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+/* button.active {
+    transition: 100ms;
+    transform: scale(0.95);
+    box-shadow: none;
+    color: rgb(103, 199, 165);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+} */

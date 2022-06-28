@@ -1,16 +1,56 @@
+const DEFAULT_COLOR = '#e06565';
+const DEFAULT_MODE = 'color';
+
+let currentColor = DEFAULT_COLOR;
+let currentMode = DEFAULT_MODE;
+
 const cont = document.createElement('div');
 const title = document.createElement('h1');
-const button = document.createElement('button');
+
+const colorPicker = document.querySelector('#color_picker');
+const colorBtn = document.querySelector('#color');
+const rainbowBtn = document.querySelector('#rainbow');
+const eraseBtn = document.querySelector('#erase');
+const sizeBtn = document.querySelector('#size');
+const resetBtn = document.querySelector('#reset');
+
+colorPicker.oninput = (e) => currentColor = `${e.target.value}`;
+colorBtn.onclick = () => currentMode = 'color';
+rainbowBtn.onclick = () => currentMode = 'rainbow';
+eraseBtn.onclick = () => currentMode = 'erase';
+resetBtn.onclick = () => resetGrid();
+
 
 // Set up main structure of HTML
 cont.className = 'container';
 document.body.prepend(cont);
 cont.before(title);
 title.textContent = 'ETCH A SKETCH';
-cont.after(button);
-button.id = "button";
-button.textContent = "GENERATE";
 
+// Random number generator
+function randomNumber(max) {
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max + 1));
+};
+
+// Change color
+function changeColor(e) {
+    if (currentMode === 'color') {
+        e.target.classList.add('active');
+        e.target.style.backgroundColor = currentColor;
+    }
+    else if (currentMode === 'rainbow') {
+        let randomR = randomNumber(255);
+        let randomG = randomNumber(255);
+        let randomB = randomNumber(255);
+        e.target.classList.add('active');
+        e.target.style.backgroundColor = `rgba(${randomR},${randomG},${randomB},0.4)`;
+    }
+    else if (currentMode === 'erase') {
+        e.target.classList.add('active');
+        e.target.style.backgroundColor = '#FFFFFF';
+    }
+};
 
 // Create a grid 
 function createGrid(times) {
@@ -23,13 +63,25 @@ function createGrid(times) {
     width: 1000px;
     height: 1000px;
     align-items: center;
-    justify-items: center;`);
+    justify-items: center;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 16px;
+    background-color: #ffffff;`);
 
     for (let i = 0; i < (times * times); i++) {
-        let div = document.createElement('div');
-        cont.appendChild(div).className = 'grid_item';
+        const div = document.createElement('div');
+        div.className = "grid_item";
+        div.addEventListener('mouseover', changeColor);
+        cont.appendChild(div);
     };
 };
+
+// Clear the grid
+function resetGrid() {
+    const div = document.querySelectorAll('.grid_item');
+    div.forEach(item => {
+        item.style.backgroundColor = '#ffffff';
+    });
+}
 
 // Checks if the size of the grid is not too big
 function checkSize(times) {
@@ -39,18 +91,20 @@ function checkSize(times) {
     else {
         return false;
     }
-}
+};
 
 // On click prompts the user to input the size of the grid and checks if its not too big
-button.addEventListener('click', () => {
+sizeBtn.addEventListener('click', () => {
     let times = prompt('Choose the size of the grid:', '');
     if (checkSize(times)) {
         alert('Grid size too big! \nMaximum: 100');
     }
     else {
+        resetGrid();
         createGrid(times);
     }
 });
+
 
 // Initial grid
 createGrid(16);
