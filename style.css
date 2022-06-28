@@ -22,12 +22,18 @@ h1 {
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.24);
 }
 
+.main {
+    display: flex;
+    margin-right: 300px;
+    gap: 100px;
+}
+
 .buttons {
     display: flex;
-    height: 120px;
-    width: 1000px;
-    justify-content: space-between;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    gap: 80px;
+    align-items: center;
 }
 
 #color_picker {
@@ -35,14 +41,15 @@ h1 {
     width: 80px;
     height: 80px;
     border-radius: 50px;
+    transform: scale(1.5);
+    margin-top: 20px;
     border: none;
     cursor: pointer;
 }
 
-button:hover,
 #color_picker:hover {
     transition: 100ms;
-    transform: scale(1.05);
+    transform: scale(1.60);
 }
 
 #color_picker::-webkit-color-swatch-wrapper {
@@ -76,10 +83,14 @@ button {
     border: none;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 16px;
-    width: 140px;
-    height: 60px;
-    margin-bottom: 10px;
+    width: 200px;
+    height: 80px;
     cursor: pointer;
+}
+
+button:hover {
+    transition: 100ms;
+    transform: scale(1.10);
 }
 
 button:active {
