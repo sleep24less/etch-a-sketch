@@ -13,9 +13,9 @@ button.textContent = "GENERATE";
 
 
 // Create a grid 
-function createGrid(parent, times) {
+function createGrid(times) {
 
-    parent.setAttribute('style', `display: grid;
+    cont.setAttribute('style', `display: grid;
     grid-template-columns: repeat(${times}, 1fr);
     grid-template-rows: repeat(${times}, 1fr);
     grid-column-gap: 0px;
@@ -27,11 +27,33 @@ function createGrid(parent, times) {
 
     for (let i = 0; i < (times * times); i++) {
         let div = document.createElement('div');
-        parent.appendChild(div).className = 'grid_item';
+        cont.appendChild(div).className = 'grid_item';
     };
 };
 
-createGrid(cont, 16);
+// Checks if the size of the grid is not too big
+function checkSize(times) {
+    if (times > 100) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+// On click prompts the user to input the size of the grid and checks if its not too big
+button.addEventListener('click', () => {
+    let times = prompt('Choose the size of the grid:', '');
+    if (checkSize(times)) {
+        alert('Grid size too big! \nMaximum: 100');
+    }
+    else {
+        createGrid(times);
+    }
+});
+
+// Initial grid
+createGrid(16);
 
 
 

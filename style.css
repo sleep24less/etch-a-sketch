@@ -21,10 +21,16 @@ h1 {
     margin-bottom: 40px;
 }
 
-div {
+.grid_item {
+    transition: 2000ms;
     background-color: white;
     height: 100%;
     width: 100%;
+}
+
+.grid_item:hover {
+    transition: 0ms;
+    background-color: rgb(224, 101, 101);
 }
 
 button {
@@ -40,7 +46,6 @@ button {
     width: 200px;
     height: 60px;
     margin-top: 50px;
-    transform: ;
     cursor: pointer;
 }
 
