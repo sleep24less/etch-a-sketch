@@ -86,14 +86,14 @@ button:active {
     transition: 100ms;
     transform: scale(0.95);
     box-shadow: none;
-    color: rgb(103, 199, 165);
+    text-shadow: aquamarine 0px 0px 8px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-/* button.active {
-    transition: 100ms;
+button.active {
+    transition: 300ms;
     transform: scale(0.95);
+    text-shadow: aquamarine 0px 0px 8px;
     box-shadow: none;
-    color: rgb(103, 199, 165);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-} */
+    box-shadow: rgb(127, 255, 212) 0px 0px 12px 4px;
+}

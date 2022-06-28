@@ -15,9 +15,9 @@ const sizeBtn = document.querySelector('#size');
 const resetBtn = document.querySelector('#reset');
 
 colorPicker.oninput = (e) => currentColor = `${e.target.value}`;
-colorBtn.onclick = () => currentMode = 'color';
-rainbowBtn.onclick = () => currentMode = 'rainbow';
-eraseBtn.onclick = () => currentMode = 'erase';
+colorBtn.onclick = () => setCurrentMode('color');
+rainbowBtn.onclick = () => setCurrentMode('rainbow');
+eraseBtn.onclick = () => setCurrentMode('erase');
 resetBtn.onclick = () => resetGrid();
 
 
@@ -31,6 +31,35 @@ title.textContent = 'ETCH A SKETCH';
 function randomNumber(max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max + 1));
+};
+
+// Sets current mode to paint
+function setCurrentMode(newMode) {
+    activeButton(newMode);
+    currentMode = newMode;
+};
+
+// Button pressed style
+function activeButton(newMode) {
+    if (currentMode === 'color') {
+        colorBtn.classList.remove('active');
+    }
+    else if (currentMode === 'rainbow') {
+        rainbowBtn.classList.remove('active');
+    }
+    else if (currentMode === 'erase') {
+        eraseBtn.classList.remove('active');
+    }
+
+    if (newMode === 'color') {
+        colorBtn.classList.add('active');
+    }
+    else if (newMode === 'rainbow') {
+        rainbowBtn.classList.add('active');
+    }
+    else if (newMode === 'erase') {
+        eraseBtn.classList.add('active');
+    }
 };
 
 // Change color
@@ -81,7 +110,7 @@ function resetGrid() {
     div.forEach(item => {
         item.style.backgroundColor = '#ffffff';
     });
-}
+};
 
 // Checks if the size of the grid is not too big
 function checkSize(times) {
@@ -106,7 +135,8 @@ sizeBtn.addEventListener('click', () => {
 });
 
 
-// Initial grid
+// Initial start-up
+activeButton('color');
 createGrid(16);
 
 
