@@ -9,4 +9,45 @@ body {
     line-height: 1.5;
     color: aquamarine;
     background-color: rgb(224, 101, 101);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+div {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}
+
+button {
+    transition: 100ms;
+    font-family: 'Nunito', 'Open Sans Light', sans-serif;
+    color: aquamarine;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: rgb(126, 58, 58);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 0px 1px aquamarine;
+    width: 200px;
+    height: 60px;
+    margin-top: 50px;
+    transform: ;
+    cursor: pointer;
+}
+
+button:active {
+    transition: 100ms;
+    transform: scale(0.95);
+    box-shadow: none;
+    color: rgb(103, 199, 165);
+    box-shadow: 1px 1px 0px 1px rgb(67, 134, 111);
 }
