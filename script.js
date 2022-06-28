@@ -123,10 +123,11 @@ function checkSize(times) {
 };
 
 // On click prompts the user to input the size of the grid and checks if its not too big
-sizeBtn.addEventListener('click', () => {
+outer: sizeBtn.addEventListener('click', () => {
     let times = prompt('Choose the size of the grid:', '');
     if (checkSize(times)) {
         alert('Grid size too big! \nMaximum: 100');
+        createGrid(16);
     }
     else {
         resetGrid();
