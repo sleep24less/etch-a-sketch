@@ -90,8 +90,9 @@ function createGrid(times) {
     grid-template-rows: repeat(${times}, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    width: 1200px;
-    height: 1200px;
+    width: 70vw;
+    max-width: 70vh;
+    aspect-ratio: 1 / 1 ;
     align-items: center;
     justify-items: center;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 16px;
