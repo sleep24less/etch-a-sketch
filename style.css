@@ -71,6 +71,11 @@ h1 {
     background-color: white;
     height: 100%;
     width: 100%;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 .grid_item.active {
@@ -120,7 +125,7 @@ button.active {
     align-items: center;
     font-weight: bold;
     color: #642d2d;
-    font-size: 18px;
+    font-size: 16px;
     flex-shrink: 0;
     height: 60px;
     width: 100%;
@@ -128,11 +133,14 @@ button.active {
 
 .fa-github {
     color: #642d2d;
-    font-size: 24px;
+    font-size: 20px;
     transition: transform 0.3s ease-in-out;
     margin-left: 10px;
+    margin-top: 4px;
 }
 
 .fa-github:hover {
     transform: rotate(360deg) scale(1.2);
+    color: aquamarine;
+    transition: 0.5s;
 }

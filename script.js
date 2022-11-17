@@ -98,6 +98,7 @@ function createGrid(times) {
     box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 16px;
     background-color: #ffffff;`);
 
+    // creating grid items and drawing with mouseover 
     for (let i = 0; i < (times * times); i++) {
         const div = document.createElement('div');
         div.className = "grid_item";
