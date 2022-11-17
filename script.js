@@ -95,7 +95,7 @@ function createGrid(times) {
     aspect-ratio: 1 / 1 ;
     align-items: center;
     justify-items: center;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 16px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 6px 16px;
     background-color: #ffffff;`);
 
     // creating grid items and drawing with mouseover 
