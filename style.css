@@ -166,14 +166,23 @@ button.active {
         width: 90vw !important;
     }
 
+    .container {
+        width: 90vw !important;
+    }
+
+    .grid {
+        width: 90vw !important;
+    }
+
     .buttons {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-items: center;
+        align-items: center;
         width: 95vw;
         max-width: 95vw;
-        gap: 10px;
-        align-items: center;
+        gap: 0px;
     }
 
 }
