@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+html {
+    height: -webkit-fill-available;
+}
+
 body {
     font-family: 'Nunito', 'Open Sans Light', sans-serif;
     line-height: 1.5;
@@ -13,7 +17,7 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    width: 100vw;
+    height: -webkit-fill-available;
 }
 
 :root {
@@ -147,4 +151,29 @@ button.active {
     transform: rotate(360deg) scale(1.2);
     color: aquamarine;
     transition: 0.5s;
+}
+
+@media only screen and (max-width: 768px) {
+
+    h1 {
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.24);
+    }
+
+    .container.grid {
+        width: 90vw !important;
+    }
+
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 95vw;
+        max-width: 95vw;
+        gap: 10px;
+        align-items: center;
+    }
+
 }

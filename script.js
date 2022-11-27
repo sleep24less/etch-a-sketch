@@ -25,6 +25,7 @@ resetBtn.onclick = () => resetGrid();
 
 // Insert grid
 cont.className = 'container';
+cont.classList.add('grid');
 main.appendChild(cont);
 
 
